@@ -38,5 +38,15 @@ describe('getCurrencies', () => {
   });
 });
 
+describe('getProduct', () => {
+  it('should get the product with the given ID', () => {
+    const result = lib.getProduct(1);
+    expect(result).toEqual({ id: 1, price: 10 });//toEqual tests for object equality to that in memory only.
+    //These are less specific and so, prefered methods:
+    expect(result).toMatchObject({ id: 1, price: 10 });//toMatchObject only looks for listed properties.
+    expect(result).toHaveProperty('id', 1, 'price', 10);//toHaveProperty only looks for listed properties.
+  });
+});
+
 
 
