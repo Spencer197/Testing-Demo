@@ -48,5 +48,20 @@ describe('getProduct', () => {
   });
 });
 
+describe('registerUser', () => {
+  it('should throw if username is falsy', () => {
+    const args = [null, undefined, NaN, '', 0, false];//Array includes all arguments we want to pass to registerUser method.
+    args.forEach(a => {
+      expect(() => { lib.registerUser(a) }).toThrow();
+    });
+  });
+
+  it('should return a valid user object if valid username is passed', () => { 
+    const result = lib.registerUser('Spencer');
+    expect(result).toMatchObject({ username: 'Spencer' })
+    expect(result.id).toBeGreaterThan(0);
+  });
+});
+
 
 
