@@ -9,7 +9,7 @@ module.exports.absolute = function(number) {
 
 // Testing strings 
 module.exports.greet = function(name) { 
-  return 'Welcome ' + name; 
+  return 'Welcome ' + name + '!'; 
 }
 
 // Testing arrays 
